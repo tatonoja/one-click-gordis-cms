@@ -21,7 +21,7 @@ document.body.style.overflow = 'hidden';
 const opcionesPersuasion = [
 	{
 		texto: "¿Seguro? Mira esta carita...",
-		img: "./images/gordi-triste.png",
+		img: "/images/gordi-triste.png",
 		labelSi: "Vale, sí...",
 		labelNo: "¿En serio?"
 	},
