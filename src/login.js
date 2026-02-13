@@ -1,11 +1,23 @@
 // Función para mostrar la web una vez autenticado
 function mostrarWeb() {
-	console.log("Acceso concedido. Mostrando contenido...");
+	console.log("Acceso concedido. Limpiando widget...");
+
+	// 1. Hacemos visible el contenido real
 	document.body.style.visibility = "visible";
 	document.body.classList.add("u-authenticated");
-	// Cerramos el modal por si sigue abierto
+
+	// 2. Cerramos el widget de forma oficial
 	if (window.netlifyIdentity) {
 		window.netlifyIdentity.close();
+	}
+
+	// 3. ELIMINACIÓN RADICAL: Borramos el iframe del DOM para que no bloquee clics
+	const widget = document.getElementById('netlify-identity-widget');
+	if (widget) {
+		widget.remove();
+		// También quitamos la clase que Netlify añade al body y que suele bloquear el scroll
+		document.body.classList.remove('nf-modal-open');
+		console.log("Iframe eliminado con éxito.");
 	}
 }
 

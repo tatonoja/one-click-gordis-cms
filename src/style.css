@@ -189,3 +189,20 @@ body.u-authenticated, body.nf-modal-open {
   visibility: visible !important;
   display: block !important;
 }
+
+body.u-authenticated {
+  visibility: visible !important;
+  overflow: auto !important;
+  pointer-events: auto !important;
+}
+
+/* Por si el iframe dejara algún residuo visual */
+.netlify-identity-widget,
+#netlify-identity-widget {
+  display: none !important;
+}
+
+/* Solo mostramos el widget si NO estamos autenticados */
+body:not(.u-authenticated) #netlify-identity-widget {
+  display: block !important;
+}
