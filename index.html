@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Gordi 🎈 ❤️</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💙</text></svg>">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="container" id="mainCard">
+        <div class="img-container">
+            <img id="introImg" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/BPe1fWyByPl9S/giphy.gif" alt="Stitch">
+        </div>
+        <h1 id="introTitle">¿Quieres ser mi cita de San Valentín?</h1>
+        <div class="buttons" id="introButtons">
+            <button id="btnSi">¡SÍ!</button>
+            <button id="btnNo">No</button>
+        </div>
+    </div>
+
+    <div class="container" id="confirmacionCard" style="display: none;">
+        <div class="img-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/B96u96shfSeoE/giphy.gif" alt="Stitch dudando">
+        </div>
+        <h1>¿De verdad, de verdad? ✨</h1>
+        <p>Aceptar ser mi San Valentín conlleva una gran responsabilidad (y muchos mimos).</p>
+        <div class="buttons">
+            <button id="btnConfirmarSi">¡QUE SÍ! 😍</button>
+            <button id="btnConfirmarNo">Me lo tengo que pensar...</button>
+        </div>
+    </div>
+
+    <div class="container" id="preTestCard" style="display: none;">
+        <div class="img-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/13fTar4VVaFlG8/giphy.gif" alt="Stitch preparando">
+        </div>
+        <h1>¡EXAMEN DE OHANA! 📝</h1>
+        <p>¡Genial! Pero antes, vamos a ver cuánto sabes de nuestra historia.</p>
+        <p>Si sacas más de un 80%, la cita es oficialmente tuya.</p>
+        <div class="buttons">
+            <button id="btnEmpezarTest">¡A por ello! 🚀</button>
+        </div>
+    </div>
+    <div class="container" id="testCard" style="display: none;">
+        <div class="img-container">
+            <img id="preguntaImg" src="" alt="Pregunta">
+        </div>
+        <h1 id="preguntaTexto">Cargando pregunta...</h1>
+        <div class="buttons" id="opcionesContainer">
+            </div>
+    </div>
+
+    <div class="container" id="feedbackCard" style="display: none;">
+        <div class="img-container">
+            <img id="feedbackImg" src="" alt="Feedback">
+        </div>
+        <h1 id="feedbackTitle"></h1>
+        <p id="feedbackSub"></p>
+        <div class="buttons">
+            <button id="btnSiguiente">Continuar</button>
+        </div>
+    </div>
+
+    <div class="container mensaje-final" id="successMessage" style="display: none;">
+        <div class="img-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/5SFrS0PAb5N5u/giphy.gif" alt="Stitch feliz">
+        </div>
+        <h1>¡ALOHA! ✨</h1>
+        <p>¡Sabía que tu nivel de bondad era alto! Te espero el 14.</p>
+    </div>
+
+    <div class="container mensaje-final" id="errorMessage" style="display: none;">
+        <div class="img-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpobjBqcHppYTN4bmR6ZW9qZzF0eXp6ZzZ6ZzZ6ZzZ6ZzZ6ZzZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/11ykUODcxvruHi/giphy.gif" alt="Stitch triste">
+        </div>
+        <h1>ERROR 404 ❤️🩹</h1>
+        <p>Parece que Stitch está confundido... ¡Necesitas conocerme un poquito más!</p>
+        <div class="buttons">
+            <button onclick="location.reload()">Reintentar</button>
+        </div>
+    </div>
+
+    <script type="module" src="src/login.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
