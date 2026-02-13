@@ -26,26 +26,26 @@ const opcionesPersuasion = [
 		labelNo: "¿En serio?"
 	},
 	{
-		texto: "Piénsatelo otra vez... ¡Ohana!",
-		img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/11KzOet1ElBDz2/giphy.gif",
+		texto: "Piénsatelo otra vez...",
+		img: "/images/toy-story.gif",
 		labelSi: "Venga, va",
 		labelNo: "Sigo diciendo no"
 	},
 	{
 		texto: "Te daré muchos snacks si dices que sí",
-		img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/pS77p6vV9tJok/giphy.gif",
+		img: "/images/mordisquitos.gif",
 		labelSi: "¡Por los snacks!",
 		labelNo: "No me sobornes"
 	},
 	{
 		texto: "Si dices que no, Stitch se pone triste",
-		img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/uxv6t1fIOojDy/giphy.gif",
+		img: "/images/stitch-llora.gif",
 		labelSi: "¡No llores! Sí",
 		labelNo: "Corazón de piedra"
 	},
 	{
 		texto: "¡Última oportunidad! ¿Me vas a dejar así?",
-		img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/ROHl9yvRAsNJC/giphy.gif",
+		img: "/images/gato-botas-ojitos.gif",
 		labelSi: "¡SÍ, PESADO!",
 		labelNo: "Soy un monstruo"
 	}

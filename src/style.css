@@ -103,7 +103,7 @@ img {
   width: 100%;
   height: 100%;
   /* MÁGIA AQUÍ: La imagen se recorta para llenar el espacio sin deformarse */
-  object-fit: cover;
+  object-fit: contain;
   /* Si prefieres que se vea la foto entera aunque queden huecos, usa 'contain' */
   display: block; /* Evita espacios extra debajo de la imagen */
   transition: opacity 0.3s ease;
