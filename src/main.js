@@ -343,7 +343,10 @@ function crearCorazonLluvia() {
 
 	const heart = document.createElement('div');
 	heart.classList.add('emoji-particle', 'pride-heart');
-	heart.innerHTML = '❤';
+
+	// LA MAGIA: El corazón + el selector de variante de texto
+	// Esto desactiva el emoji de Apple y activa el color CSS
+	heart.innerText = '\u2764\uFE0E';
 
 	// Color de la bandera
 	const colorAzar = coloresPride[Math.floor(Math.random() * coloresPride.length)];
@@ -373,6 +376,6 @@ function crearCorazonLluvia() {
 }
 
 // CREAR LOS 50
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 100; i++) {
 	crearCorazonLluvia();
 }

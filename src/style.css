@@ -274,13 +274,18 @@ button {
 
 .emoji-particle.pride-heart {
   position: absolute;
-  /* Nacen justo por encima del borde superior */
   top: -50px;
+  /* Forzamos el color */
   color: var(--heart-color) !important;
-  opacity: 0.6;
-  /* Animación infinita: cae, desaparece y vuelve a empezar */
+  fill: var(--heart-color) !important; /* Por si acaso */
+
+  /* Importante para Safari: fuentes que no tengan emoji propio */
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+
+  opacity: 0.7;
   animation: fallDown var(--duration) linear infinite;
   user-select: none;
+  -webkit-user-select: none; /* Prefijo Safari */
   will-change: transform;
 }
 
