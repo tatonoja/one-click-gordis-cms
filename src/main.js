@@ -53,22 +53,59 @@ const opcionesPersuasion = [
 
 const preguntas = [
 	{
-		texto: "¿Cuál es nuestra comida favorita?",
-		img: "https://media.giphy.com/media/pS77p6vV9tJok/giphy.gif",
-		opciones: ["Pizza", "Sushi", "Hamburguesa", "Tacos"],
+		texto: "¿Dónde fue nuestra primera cita?",
+		img: "/images/preguntas/primera_cita.jpeg",
+		opciones: ["La Capocha", "Akira", "La Calita", "Sloopy Joe's"],
+		correcta: 0
+	},
+	{
+		texto: "¿Gordi 2 es Borde?",
+		img: "/images/preguntas/gordi-borde.jpeg",
+		opciones: ["Si", "No", "Claro que Si", "Por supuesto que No"],
+		correcta: 3
+	},
+	{
+		texto: "¿Vendiste a Gordi 2 en aquella partida de DANY, para poder ganar?",
+		img: "/images/preguntas/dany.jpg",
+		opciones: ["SI", "NO", "Si, Si, Si, Si, Si", "Bueno... no"],
+		correcta: 2
+	},
+	{
+		texto: "¿Quien dijo el Primer Te Quiero?",
+		img: "/images/preguntas/gordis-novios.jpeg",
+		opciones: ["Gordi 1", "Gordi 2", "Yo me llamo Ralph", "Juego con mi Melocotonero"],
+		correcta: 0
+	},
+	{
+		texto: "¿A que gordi le gustan los videos de sustos?",
+		img: "/images/preguntas/gordi-miedo.jpeg",
+		opciones: ["Gordi 1", "BUHHHH", "Gordi 2", "Sustooo"],
+		correcta: 2
+	},
+	{
+		texto: "¿Vas a acabar alguna vez la Tesis?",
+		img: "/images/preguntas/gordi-tesis.jpeg",
+		opciones: ["NUNCA", "Tesis? Eso que es?", "Are You Kidding Me?", "Rie mientras se muere por dentro"],
+		correcta: 3
+	},
+	{
+		texto: "¿Tu sabes que yo te quiero?",
+		img: "/images/preguntas/gordi-beso.jpeg",
+		opciones: ["Primera Noticia", "SIIIIIIIIII", "No lo tengo Claro", "Embustero"],
 		correcta: 1
 	},
 	{
-		texto: "¿Dónde fue nuestra primera cita?",
-		img: "https://media.giphy.com/media/ROHl9yvRAsNJC/giphy.gif",
-		opciones: ["El Parque", "Cine", "Cafetería", "Playa"],
-		correcta: 2
+		texto: "¿Tu me quieres?",
+		img: "/images/preguntas/gordi-beso2.jpeg",
+		opciones: ["No conozco ese termino", "No no no no", "Soy un Globo, no tengo sentimientos", "SHII"],
+		correcta: 3
 	}
 ];
 
 let ultimaOpcion = -1;
 let preguntaActual = 0;
 let aciertos = 0;
+let indicePersuasionActual = 0;
 
 // --- LÓGICA DE NAVEGACIÓN (SISTEMA ANTI-SOLAPE) ---
 function ocultarTodasLasPantallas() {
@@ -91,15 +128,12 @@ function ocultarTodasLasPantallas() {
 btnNo.addEventListener('click', (e) => {
 	e.preventDefault();
 
-	let indiceRandom;
-	do {
-		indiceRandom = Math.floor(Math.random() * opcionesPersuasion.length);
-	} while (indiceRandom === ultimaOpcion);
+	// 1. Obtenemos el mensaje actual usando el índice
+	const seleccion = opcionesPersuasion[indiceActualPersuasion];
 
-	ultimaOpcion = indiceRandom;
-	const seleccion = opcionesPersuasion[indiceRandom];
+	indiceActualPersuasion = (indiceActualPersuasion + 1) % opcionesPersuasion.length;
 
-	// Animación suave de cambio
+	// --- Tu lógica de animación suave ---
 	mainImage.style.opacity = 0;
 	mainTitle.style.opacity = 0;
 	btnSi.style.opacity = 0;
