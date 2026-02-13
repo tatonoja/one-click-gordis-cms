@@ -268,17 +268,29 @@ button {
   width: 100vw; /* Asegura todo el ancho */
   height: 100vh;
   pointer-events: none;
-  z-index: 0; /* Lo ponemos al fondo del todo */
+  z-index: 1; /* Lo ponemos al fondo del todo */
   overflow: hidden;
 }
 
 .emoji-particle.pride-heart {
   position: absolute;
-  bottom: -50px;
-  /* El color lo da el JS, pero forzamos que sea el de la variable */
+  /* Nacen justo por encima del borde superior */
+  top: -50px;
   color: var(--heart-color) !important;
-  /* Usamos un filtro para que los colores se vean vibrantes en Safari */
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
-  font-family: Arial, sans-serif;
-  will-change: transform; /* Optimización para iPhone */
+  opacity: 0.6;
+  /* Animación infinita: cae, desaparece y vuelve a empezar */
+  animation: fallDown var(--duration) linear infinite;
+  user-select: none;
+  will-change: transform;
+}
+
+@keyframes fallDown {
+  0% {
+    /* Empezamos arriba del todo */
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    /* Bajamos toda la altura de la pantalla + un margen para que salgan por abajo */
+    transform: translateY(110vh) rotate(360deg);
+  }
 }

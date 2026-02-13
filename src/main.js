@@ -335,56 +335,44 @@ if (window.netlifyIdentity) {
 }
 
 // Colores de la bandera LGTBIQ+
-const coloresPride = [
-	'#E74C3C', // Rojo
-	'#E67E22', // Naranja
-	'#F1C40F', // Amarillo
-	'#2ECC71', // Verde
-	'#3498DB', // Azul
-	'#9B59B6'  // Morado
-];
-
+const coloresPride = ['#E74C3C', '#E67E22', '#F1C40F', '#2ECC71', '#3498DB', '#9B59B6'];
 const container = document.querySelector('.emoji-background');
 
-function crearEmoji() {
-	if (!container) return; // Seguridad por si el div no carga
+function crearCorazonLluvia() {
+	if (!container) return;
 
 	const heart = document.createElement('div');
 	heart.classList.add('emoji-particle', 'pride-heart');
+	heart.innerHTML = '❤';
 
-	// Usamos el corazón sólido
-	heart.innerHTML = '&#10084;';
-
-	// 1. ASIGNAR COLOR: Elegimos un color de la bandera
+	// Color de la bandera
 	const colorAzar = coloresPride[Math.floor(Math.random() * coloresPride.length)];
 	heart.style.setProperty('--heart-color', colorAzar);
 
-	// 2. REPARTIR POR EL FONDO: Posición horizontal aleatoria de 0 a 100
+	// Reparto horizontal
 	heart.style.left = Math.random() * 100 + "vw";
 
-	// 3. VARIAR TAMAÑOS: Para que no se vea una fila monótona
-	const tamano = Math.random() * 20 + 10;
-	heart.style.fontSize = tamano + "px";
+	// Reparto vertical inicial (para que no empiecen todos arriba a la vez)
+	// Al ponerles un top negativo aleatorio, irán entrando en tiempos diferentes
+	heart.style.top = -(Math.random() * 100) + "vh";
 
-	// 4. TIEMPOS ALEATORIOS: Para que no suban todos a la vez
-	const duracion = Math.random() * 4 + 6; // Entre 6 y 10 segundos
-	heart.style.animationDuration = duracion + "s";
+	// Tamaño
+	heart.style.fontSize = (Math.random() * 15 + 12) + "px";
 
-	// Un poco de retraso aleatorio para romper la "fila"
-	heart.style.animationDelay = Math.random() * 5 + "s";
+	// Velocidad de caída lenta (entre 10 y 20 segundos)
+	const duracion = Math.random() * 10 + 10;
+	heart.style.setProperty('--duration', duracion + "s");
+
+	// Un toque de difuminado para los que están "lejos"
+	if (Math.random() > 0.5) {
+		heart.style.filter = "blur(1px)";
+		heart.style.opacity = "0.4";
+	}
 
 	container.appendChild(heart);
-
-	// Borrar cuando terminen para no petar el móvil
-	setTimeout(() => {
-		heart.remove();
-	}, (duracion + 5) * 1000);
 }
 
-// LANZAMIENTO: Crea muchos al principio para llenar el fondo rápido
-for(let i = 0; i < 15; i++) {
-	setTimeout(crearEmoji, i * 300);
+// CREAR LOS 50
+for (let i = 0; i < 50; i++) {
+	crearCorazonLluvia();
 }
-
-// Luego sigue creando uno cada medio segundo
-setInterval(crearEmoji, 500);
