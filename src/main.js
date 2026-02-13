@@ -347,30 +347,44 @@ const coloresPride = [
 const container = document.querySelector('.emoji-background');
 
 function crearEmoji() {
+	if (!container) return; // Seguridad por si el div no carga
+
 	const heart = document.createElement('div');
 	heart.classList.add('emoji-particle', 'pride-heart');
 
-	// Usamos el carácter de corazón sólido
-	heart.innerText = '❤';
+	// Usamos el corazón sólido
+	heart.innerHTML = '&#10084;';
 
-	// Elegimos un color de la bandera al azar
+	// 1. ASIGNAR COLOR: Elegimos un color de la bandera
 	const colorAzar = coloresPride[Math.floor(Math.random() * coloresPride.length)];
 	heart.style.setProperty('--heart-color', colorAzar);
 
-	// --- Configuración de movimiento (igual que antes) ---
-	heart.style.left = Math.random() * 100 + 'vw';
-	heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+	// 2. REPARTIR POR EL FONDO: Posición horizontal aleatoria de 0 a 100
+	heart.style.left = Math.random() * 100 + "vw";
 
-	const duracion = Math.random() * 5 + 7; // Un poco más lentos para que se disfruten
-	heart.style.animationDuration = duracion + 's';
+	// 3. VARIAR TAMAÑOS: Para que no se vea una fila monótona
+	const tamano = Math.random() * 20 + 10;
+	heart.style.fontSize = tamano + "px";
+
+	// 4. TIEMPOS ALEATORIOS: Para que no suban todos a la vez
+	const duracion = Math.random() * 4 + 6; // Entre 6 y 10 segundos
+	heart.style.animationDuration = duracion + "s";
+
+	// Un poco de retraso aleatorio para romper la "fila"
+	heart.style.animationDelay = Math.random() * 5 + "s";
 
 	container.appendChild(heart);
 
-	// Limpieza
+	// Borrar cuando terminen para no petar el móvil
 	setTimeout(() => {
 		heart.remove();
-	}, duracion * 1000);
+	}, (duracion + 5) * 1000);
 }
 
-// Ejecutar cada 600ms para que haya una buena cantidad de colores en pantalla
-setInterval(crearEmoji, 600);
+// LANZAMIENTO: Crea muchos al principio para llenar el fondo rápido
+for(let i = 0; i < 15; i++) {
+	setTimeout(crearEmoji, i * 300);
+}
+
+// Luego sigue creando uno cada medio segundo
+setInterval(crearEmoji, 500);
