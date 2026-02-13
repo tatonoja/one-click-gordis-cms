@@ -89,6 +89,60 @@ const preguntas = [
 		correcta: 3
 	},
 	{
+		texto: "Si me pierdo en el súper por 20 minutos, ¿en que pasillo estoy seguro?",
+		img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBzOGpoZzI5Y3B5c2FqdXNwcjdyaHV0ZmJsaTUzb2UzN3M4amthcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z2D26GunfUK1W/giphy.gif",
+		opciones: ["Fruta", "Yogures", "Dulces", "Bebida"],
+		correcta: 2
+	},
+	{
+		texto: "Si ganara un Oscar, ¿qué sería lo más probable que pasara durante mi discurso?",
+		img: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDJwcmF1M3ZwcXB6cWhjbDFib3FqNm0xbmJ1ZjYweHdqZGkyYWh6NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dBrZhsBDQ4X6w/giphy.gif",
+		opciones: ["Me caigo al subir al escenario", "Me olvido de darte las gracias", "Empiezo a llorar sin control", "Me echan porque hablo demasiado"],
+		correcta: 3
+	},
+	{
+		texto: "Si nos perdiéramos en un bosque, ¿por qué sería?",
+		img: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2t4Z29qMXpkdXF3dHFjdWFnamljdjU1bWFnMjhua3UyMnFpcnV1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aCTPPm4OHfRLSH6/giphy.gif",
+		opciones: ["Por seguir un 'atajo' que vi en Google", "Por ir mirando el móvil", "Por algo que ha hecho Gordi 1", "Por ir discutiendo"],
+		correcta: 0
+	},
+	{
+		texto: "¿Qué hago si me sirven un plato en un restaurante que no es lo que pedí?",
+		img: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnhxbm1vbTN1anVyN3hkcGV6cmt6MWV2MzRyemQ5bGQxajJwaTMzaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT5LMMYbPOGNyKnCtW/giphy.gif",
+		opciones: ["Me lo como callado por vergüenza", "Llamo al camarero educadamente", "Te pido que te quejes tú", "Miro el plato con odio"],
+		correcta: 0
+	},
+	{
+		texto: "¿Cuál es mi reacción si me pides un trozo de mi comida favorita?",
+		img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzFzdTZ2eTg5M3U5aWs4Mzlmb29rb2d1aW9wdnZyNzhyazk4c2VnYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eSQKNSmg07dHq/giphy.gif",
+		opciones: ["Te doy el trozo más grande", "Te doy el trozo más pequeño", "Digo que no 'porque ya te ofrecí'", "Gordi 1 no le gusta compartir su comida"],
+		correcta: 3
+	},
+	{
+		texto: "¿Qué hago cuando pierdo jugando a un juego de mesa contigo?",
+		img: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHIxanNiMjZtenJoZXk2ZGZqOHpibGNwejdkNDVkNzBoMjljOXV5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WwbmjTK5TS87e/giphy.gif",
+		opciones: [ "Tiro las fichas al aire", "Digo que me has dejado ganar", "Acepto la derrota con dignidad (mentira)", "Pido la revancha enfadado/a"],
+		correcta: 3
+	},
+	{
+		texto: "¿Cuál es mi manía más extraña con el volumen de la televisión o del coche?",
+		img: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmVmcnExNnYwdWJkMWlva2l1bnk4OHA4N2Mydm5tYW40OHVkenVidyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tqfS3mgQU28ko/giphy.gif",
+		opciones: ["Tiene que ser un número par", "Tiene que terminar en 0 o 5", "Lo pongo tan alto que parecemos sordos", "Todas las anteriores"],
+		correcta: 3
+	},
+	{
+		texto: "Si te mando un video o un meme, ¿qué espero de tu parte?",
+		img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDRiN3YzeDE4cHg1NWQxOHcwamUwbXQ2Y3MwZjR6eHdnaGUwMHBpaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohc196klOZvLguVry/giphy.gif",
+		opciones: ["Un 'jajaja' inmediato aunque sea mentira", "Que me mandes otro mejor", "Un análisis profundo del video", "Que lo veas a mi lado 10 segundos después"],
+		correcta: 0
+	},
+	{
+		texto: "Si la peli empezó hace 5 minutos y seguimos en la cola de las palomitas, ¿qué hago?",
+		img: "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDVsYmp6Z2tjeTc3Y3Eycm5lYWVyc2U5a3pjZmMwMnJpbWxxZHJhcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Z0tFWbRWGwwTe/giphy.gif",
+		opciones: ["Abandono la misión y entro sin nada", "Miro fijamente al que está pagando para que corra", "Me pongo nervioso/a y empiezo a resoplar", "Digo que ya no quiero ver la película"],
+		correcta: 2
+	},
+	{
 		texto: "¿Tu sabes que yo te quiero?",
 		img: "/images/preguntas/gordi-beso.jpeg",
 		opciones: ["Primera Noticia", "SIIIIIIIIII", "No lo tengo Claro", "Embustero"],
