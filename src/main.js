@@ -21,7 +21,7 @@ document.body.style.overflow = 'hidden';
 const opcionesPersuasion = [
 	{
 		texto: "¿Seguro? Mira esta carita...",
-		img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/OPU6wUKARA3NTYGRiV/giphy.gif",
+		img: "./images/gordi-triste.png",
 		labelSi: "Vale, sí...",
 		labelNo: "¿En serio?"
 	},
