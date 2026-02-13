@@ -102,6 +102,16 @@ const preguntas = [
 	}
 ];
 
+opcionesPersuasion.forEach(opcion => {
+	const img = new Image();
+	img.src = opcion.img;
+});
+
+preguntas.forEach(opcion => {
+	const img = new Image();
+	img.src = opcion.img;
+});
+
 let ultimaOpcion = -1;
 let preguntaActual = 0;
 let aciertos = 0;

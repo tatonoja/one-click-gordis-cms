@@ -15,14 +15,18 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+html {
+  height: -webkit-fill-available;
+  background-color: var(--stitch-deep-blue);
+}
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
   margin: 0;
-  /* Hacemos el degradado más grande para que tenga margen de movimiento */
   background: radial-gradient(circle at 50% 50%, var(--stitch-light-blue), var(--stitch-deep-blue));
   background-size: 200% 200%; /* Tamaño doble para poder desplazarlo */
 
