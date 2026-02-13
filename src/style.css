@@ -15,6 +15,14 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+
+html, body {
+  /* Evita el scroll elástico que a veces rompe la animación en iPhone */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 html {
   height: -webkit-fill-available;
   background-color: var(--stitch-deep-blue);
@@ -25,21 +33,31 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100dvh;
+  /* Fallback para versiones antiguas de Safari iOS */
   min-height: -webkit-fill-available;
   margin: 0;
-  background: radial-gradient(circle at 50% 50%, var(--stitch-light-blue), var(--stitch-deep-blue));
-  background-size: 200% 200%; /* Tamaño doble para poder desplazarlo */
+
+  /* Usamos un degradado lineal con 4 paradas para que el movimiento sea real */
+  background: linear-gradient(
+          -45deg,
+          var(--stitch-deep-blue),
+          var(--stitch-light-blue),
+          var(--stitch-deep-blue),
+          var(--stitch-light-blue)
+  );
+
+  background-size: 400% 400%; /* Aumentamos el tamaño para que el movimiento se note más */
 
   font-family: 'Lexend', sans-serif;
   overflow: hidden;
   text-align: center;
   padding: 15px;
 
-  /* Lanzamos la animación */
+  /* Añadimos prefijo webkit para máxima compatibilidad en iOS */
+  -webkit-animation: gradientMove 10s ease infinite;
   animation: gradientMove 10s ease infinite;
 }
 
-/* Animación que desplaza el centro del degradado */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -50,6 +68,13 @@ body {
   100% {
     background-position: 0% 50%;
   }
+}
+
+/* Específico para Safari en versiones anteriores */
+@-webkit-keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* --- CONTENEDOR ORIGINAL --- */
