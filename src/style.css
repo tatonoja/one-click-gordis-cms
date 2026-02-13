@@ -76,7 +76,6 @@ h1 {
   margin-bottom: 1rem;
   line-height: 1.2;
   text-shadow: 2px 2px var(--stitch-deep-blue);
-  transition: opacity 0.3s ease;
 }
 
 p {
@@ -86,23 +85,27 @@ p {
 }
 
 /* --- IMAGEN ADAPTABLE --- */
+/* --- IMAGEN ADAPTABLE --- */
 .img-container {
   width: 100%;
-  height: 200px;
+  height: 220px; /* Altura fija para que el diseño no salte */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
-  overflow: hidden;
+  overflow: hidden; /* Corta lo que sobre si la foto es muy grande */
   border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2); /* Fondo sutil por si la imagen tarda en cargar */
+  border: 2px solid var(--ocean-turq);
 }
 
 img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 15px;
-  border: 2px solid var(--soft-lila);
+  width: 100%;
+  height: 100%;
+  /* MÁGIA AQUÍ: La imagen se recorta para llenar el espacio sin deformarse */
+  object-fit: cover;
+  /* Si prefieres que se vea la foto entera aunque queden huecos, usa 'contain' */
+  display: block; /* Evita espacios extra debajo de la imagen */
   transition: opacity 0.3s ease;
 }
 
@@ -181,11 +184,6 @@ button:active {
 /* Espaciado extra para opciones del test */
 #opcionesContainer button {
   margin-bottom: 5px;
-}
-
-/* Añade esto a las reglas que ya tenías o actualiza las existentes */
-h1, img {
-  transition: opacity 0.3s ease; /* Transición suave al cambiar */
 }
 
 #btnConfirmarNo {
