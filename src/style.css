@@ -183,3 +183,9 @@ body {
 body.u-authenticated, body.nf-modal-open {
   visibility: visible;
 }
+
+#netlify-identity-widget {
+  z-index: 100000 !important;
+  visibility: visible !important;
+  display: block !important;
+}
