@@ -333,3 +333,44 @@ if (window.netlifyIdentity) {
 		}
 	});
 }
+
+// Colores de la bandera LGTBIQ+
+const coloresPride = [
+	'#E74C3C', // Rojo
+	'#E67E22', // Naranja
+	'#F1C40F', // Amarillo
+	'#2ECC71', // Verde
+	'#3498DB', // Azul
+	'#9B59B6'  // Morado
+];
+
+const container = document.querySelector('.emoji-background');
+
+function crearEmoji() {
+	const heart = document.createElement('div');
+	heart.classList.add('emoji-particle', 'pride-heart');
+
+	// Usamos el carácter de corazón sólido
+	heart.innerText = '❤';
+
+	// Elegimos un color de la bandera al azar
+	const colorAzar = coloresPride[Math.floor(Math.random() * coloresPride.length)];
+	heart.style.setProperty('--heart-color', colorAzar);
+
+	// --- Configuración de movimiento (igual que antes) ---
+	heart.style.left = Math.random() * 100 + 'vw';
+	heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+
+	const duracion = Math.random() * 5 + 7; // Un poco más lentos para que se disfruten
+	heart.style.animationDuration = duracion + 's';
+
+	container.appendChild(heart);
+
+	// Limpieza
+	setTimeout(() => {
+		heart.remove();
+	}, duracion * 1000);
+}
+
+// Ejecutar cada 600ms para que haya una buena cantidad de colores en pantalla
+setInterval(crearEmoji, 600);
