@@ -32,9 +32,9 @@ const opcionesPersuasion = [
 		labelNo: "Sigo diciendo no"
 	},
 	{
-		texto: "Te daré muchos snacks si dices que sí",
+		texto: "Te daré muchas chuches si dices que sí",
 		img: "/images/mordisquitos.gif",
-		labelSi: "¡Por los snacks!",
+		labelSi: "¡Por las Chuches!",
 		labelNo: "No me sobornes"
 	},
 	{
@@ -230,10 +230,10 @@ function verificarRespuesta(indiceSeleccionado) {
 	const fTitle = document.getElementById('feedbackTitle');
 
 	if (correcta) {
-		fImg.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3ZSN78mDN1By8/giphy.gif";
+		fImg.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWd6dndld3Yxanptb3lmazZkcDR4emMycG9lcGJsNWNtdWo1dWFpMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xThta1ONGRY4aXOBDq/giphy.gif";
 		fTitle.innerText = "¡Correcto! 🥰";
 	} else {
-		fImg.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N2eXF6bm5oZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/ROHl9yvRAsNJC/giphy.gif";
+		fImg.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG84cXRicXVhNmk1NzhzdG9weXpvejR1N2prY3l6bDNkYzlqcXppdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aVytG2ds8e0tG/giphy.gif";
 		fTitle.innerText = "¡Upps! Casi... 🥺";
 	}
 }
