@@ -1,36 +1,49 @@
-// Función para gestionar lo que pasa cuando sabemos si hay usuario o no
-function inicializarAcceso(user) {
-	if (!user) {
-		window.netlifyIdentity.open(); // Abre el login si no hay nadie
-	} else {
-		console.log("Usuario autenticado:", user.email);
-		document.body.style.visibility = "visible"; // Aseguramos que se vea
-		document.body.classList.add("u-authenticated");
+// Función para mostrar la web una vez autenticado
+function mostrarWeb() {
+	console.log("Acceso concedido. Mostrando contenido...");
+	document.body.style.visibility = "visible";
+	document.body.classList.add("u-authenticated");
+	// Cerramos el modal por si sigue abierto
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.close();
 	}
 }
 
-// Lógica de inicialización robusta
 if (window.netlifyIdentity) {
-	// 1. Si el widget ya se inicializó antes de que cargara este script
-	const currentUser = window.netlifyIdentity.currentUser();
-	if (currentUser) {
-		inicializarAcceso(currentUser);
+	// 1. Comprobar estado inicial inmediatamente
+	const user = window.netlifyIdentity.currentUser();
+
+	if (user) {
+		mostrarWeb();
 	} else {
-		// 2. Si aún no se ha inicializado, esperamos al evento init
+		// 2. Si no hay usuario, esperamos al init para abrir el modal
 		window.netlifyIdentity.on("init", user => {
-			console.log("Evento init disparado");
-			inicializarAcceso(user);
+			if (!user) {
+				window.netlifyIdentity.open();
+			} else {
+				mostrarWeb();
+			}
 		});
 	}
 
-	// Gestionar el login exitoso
+	// 3. GESTIÓN DEL LOGIN (Sin recarga infinita)
 	window.netlifyIdentity.on("login", user => {
 		console.log("Login exitoso");
 		window.netlifyIdentity.close();
-		document.location.reload();
+
+		// En lugar de reload() directo, esperamos a que el modal se cierre
+		// y solo recargamos si es estrictamente necesario, o simplemente mostramos la web
+		mostrarWeb();
+
+		// Si notas que el estado no se actualiza bien sin recargar:
+		// setTimeout(() => { location.reload(); }, 300);
 	});
-} else {
-	// Caso de emergencia: si no carga el script de Netlify, mostramos la web
-	console.warn("Netlify Identity no cargado. Mostrando web por seguridad.");
-	document.body.style.visibility = "visible";
+
+	// Gestionar cuando se cierra el modal (por si lo cierra sin loguearse)
+	window.netlifyIdentity.on("close", () => {
+		const user = window.netlifyIdentity.currentUser();
+		if (!user) {
+			window.netlifyIdentity.open(); // Obligamos a loguearse
+		}
+	});
 }
