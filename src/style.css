@@ -231,3 +231,7 @@ body.u-authenticated {
 body:not(.u-authenticated) #netlify-identity-widget {
   display: block !important;
 }
+
+button {
+  touch-action: manipulation; /* Elimina el retraso de doble clic y evita el zoom por doble toque */
+}

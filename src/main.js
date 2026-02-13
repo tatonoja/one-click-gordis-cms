@@ -97,7 +97,7 @@ const preguntas = [
 	{
 		texto: "¿Tu me quieres?",
 		img: "/images/preguntas/gordi-beso2.jpeg",
-		opciones: ["No conozco ese termino", "No no no no", "Soy un Globo, no tengo sentimientos", "SHII"],
+		opciones: ["No conozco ese termino", "No no no no", "Soy un Globo, no tengo sentimientos", "SHIIIII"],
 		correcta: 3
 	}
 ];
