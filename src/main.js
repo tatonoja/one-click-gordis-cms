@@ -105,7 +105,7 @@ const preguntas = [
 let ultimaOpcion = -1;
 let preguntaActual = 0;
 let aciertos = 0;
-let indicePersuasionActual = 0;
+let indiceActualPersuasion = 0;
 
 // --- LÓGICA DE NAVEGACIÓN (SISTEMA ANTI-SOLAPE) ---
 function ocultarTodasLasPantallas() {
